@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CartWidget from './CartWidget'
 
 
 function Navbar (){
@@ -14,9 +15,7 @@ function Navbar (){
               </span>
               <img src="logo.png" alt=""></img>
               <div className="cart-btn">
-                <span className="nav-icon">
-                    <i className="fas fa-cart-plus"></i>  
-                </span>
+                  <CartWidget></CartWidget>
                <div className="cart-items">0</div>
               </div>
 
@@ -27,5 +26,6 @@ function Navbar (){
 
   )
 }
+
 
 export default Navbar;

@@ -20,7 +20,7 @@ body {
 }
 
 
-
+/* --------------- Navbar ---------------- */
 
 
 .navbar {
@@ -45,3 +45,24 @@ body {
     justify-content: space-between;
     padding: 0 1.5rem;
 }
+
+.nav-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .cart-btn {
+    position: relative;
+    cursor: pointer;
+  }
+  .cart-items {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--rojo);
+    padding: 0 5px;
+    border-radius: 30%;
+    color: var(--gris);
+}
+
+/* --------------- Final Navbar ---------------- */
+
