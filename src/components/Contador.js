@@ -9,19 +9,29 @@ const Contador = () => {
     }
     const restarContador = () => {
         setContador(contador - 1)
-    }
+    } 
     const resetearContador = () => {
             setContador(0)
+    }
+
+    const onAdd = () => {
+        console.log("agregado")
     }
     
     
     
     return (
-        <div>
-                        <p>El contandor va : {contador}</p>
-            <button onClick={ aumentarContador }>+</button>
-            <button onClick={ restarContador }>-</button>
-            <button onClick={ resetearContador }>reset</button>
+        <div className="contador-container">
+            <p>Nombre del producto</p>
+                <div className="itemcount">
+            <button disabled={contador >= 10}onClick={ aumentarContador }>+</button>
+                                <p>{contador}</p>
+            <button disabled={contador <= 0}onClick={ restarContador }>-</button>
+                </div>
+            <br></br>
+            <button className="btn-contador"onClick={ resetearContador }>Reset</button>
+            <br></br>
+            <button className="btn-contador"onClick={ onAdd }>Agregar al carrito</button>
         </div>
     )
 }
