@@ -1,6 +1,6 @@
 import React , {useState} from 'react';
 
-const Contador = () => {
+const Contador = ({onAdd}) => {
     
     const [contador,setContador] = useState(0)
 
@@ -14,9 +14,6 @@ const Contador = () => {
             setContador(0)
     }
 
-    const onAdd = () => {
-        console.log("agregado")
-    }
     
     
     
@@ -31,9 +28,10 @@ const Contador = () => {
             <br></br>
             <button className="btn-contador"onClick={ resetearContador }>Reset</button>
             <br></br>
-            <button className="btn-contador"onClick={ onAdd }>Agregar al carrito</button>
+            <button className="btn-contador" onClick={onAdd}>Agregar al carrito</button>
         </div>
     )
 }
+
 
 export default Contador;
