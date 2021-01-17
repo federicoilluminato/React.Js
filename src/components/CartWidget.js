@@ -2,9 +2,7 @@ import React, {Components} from 'react';
 
 function CartWidget(){
     return(
-        <span className="nav-icon">
-                    <i className="fas fa-cart-plus"></i>  
-                </span>
+        <div className="navbar-cart-items">0</div>
     )
 }
 

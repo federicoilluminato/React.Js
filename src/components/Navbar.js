@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import CartWidget from './CartWidget'
+import CartWidget from './CartWidget';
+import {Link,NavLink} from 'react-router-dom';
 
 
 function Navbar (){
@@ -8,19 +9,22 @@ function Navbar (){
 
       <nav className="navbar">
 
-      <div className="navbar-center">
 
-              <span className="nav-icon">
-                <i className="fas fa-bars"></i>
-              </span>
-              <img src="logo.png" alt=""></img>
-              <div className="cart-btn">
-                  <CartWidget></CartWidget>
-               <div className="cart-items">0</div>
-              </div>
+          <ul className="navbar-links">
+            <li className="navbar-links-li">
+          <NavLink to="/instrumentos">Instrumentos</NavLink>
+            </li>
+            <li className="navbar-links-li">
+          <NavLink to="/accesorios">Accesorios</NavLink>
+          </li>
+          </ul>
 
-      </div>
+          <NavLink className="navbar-logo" to="/">Instrumentos React</NavLink>
 
+          <i class="fas fa-shopping-cart">
+          <CartWidget></CartWidget>
+          </i>
+          
 
       </nav>
 
