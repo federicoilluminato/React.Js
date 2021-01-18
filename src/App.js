@@ -23,16 +23,20 @@ function App(){
             <Route path="/" exact>
                 <Home/>
                 <ItemListContainer></ItemListContainer>
+                
+            </Route>
+
+            <Route path="/item/:id" exact>
                 <ItemDetailContainer></ItemDetailContainer>
             </Route>
 
 
-            <Route  path="/instrumentos">
+            <Route  path="/categories/instrumentos">
                 <Instrumentos/>
             </Route>
 
 
-            <Route  path="/accesorios">
+            <Route  path="/categories/accesorios">
                 <Accesorios/>
             </Route>
             

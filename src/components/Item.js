@@ -8,10 +8,11 @@ function Item ({item}){
 
 
     return(
-        <div>
-                <p>{item.title}</p>
-                <img src={item.photo}></img>
+        <div className="itemContainer">
+                <h2>{item.title}</h2>
+                <img src={item.photo} className="card-img"></img>
                 <p>{item.price}</p>
+                <button className="card-btn">Ver Más</button>
 
 
         </div>

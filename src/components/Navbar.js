@@ -12,10 +12,10 @@ function Navbar (){
 
           <ul className="navbar-links">
             <li className="navbar-links-li">
-          <NavLink to="/instrumentos">Instrumentos</NavLink>
+          <NavLink to="/categories/instrumentos">Instrumentos</NavLink>
             </li>
             <li className="navbar-links-li">
-          <NavLink to="/accesorios">Accesorios</NavLink>
+          <NavLink to="/categories/accesorios">Accesorios</NavLink>
           </li>
           </ul>
 

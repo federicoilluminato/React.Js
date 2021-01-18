@@ -4,6 +4,7 @@ import Item from './Item'
 
 function ItemList({list}){
     return list.map(i => <Item item={i}/>)
+    
  
     }
 
