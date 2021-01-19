@@ -12,9 +12,6 @@ import image4 from '../images/image4.jpg'
 
 function ItemListContainer ({}){
 
-  const onAdd = () => {
-    console.log("agregado")
-  }
 
   const PRODUCTS = [
     {id: 1, title: 'Guitarra Fender Stratocaster', photo: image1, price:'$2500', categoryId: 'instrumentos'},
@@ -31,14 +28,6 @@ function ItemListContainer ({}){
   useEffect(()=>{
     getProducts.then((res)=>setList(res))
     getProducts.catch(err => console.log("algo salio mal"))
-    //  //si hay un id de la categoría
-    //  if(id) {
-    //   const filteredItems = list.filter(product => product.categoryId == id);
-    //   console.log(id);
-    //   setList(filteredItems);
-    //   }else{
-    //     setList(list)
-    //   }
 }, [])
 
 
@@ -49,8 +38,8 @@ const getProducts = new Promise((res, rej) => {
 })
   
 useEffect(()=>{
-  getProducts.then((res)=>setList(res))
-  getProducts.catch(err => console.log("algo salio mal"))
+  // getProducts.then((res)=>setList(res))
+  // getProducts.catch(err => console.log("algo salio mal"))
   const filteredItems = list.filter(p => p.categoryId == id);
      setList(filteredItems);
   }, [id])
@@ -64,7 +53,7 @@ useEffect(()=>{
        {/* {list.lenght > 1 ? <ItemList list={list}/> : <h2>Loading...</h2>} */}
       <ItemList  list={list}></ItemList>  
     </div>
-    <Contador onAdd={onAdd}/>
+    
     
     </div>
     
