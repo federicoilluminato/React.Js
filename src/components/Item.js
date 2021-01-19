@@ -9,10 +9,15 @@ function Item ({item}){
 
     return(
         <div className="itemContainer">
-                <h2>{item.title}</h2>
+                
                 <img src={item.photo} className="card-img"></img>
-                <p>{item.price}</p>
-                <button className="card-btn">Ver Más</button>
+                <h2 className="card-title">{item.title}</h2>
+                <p className="card-price">{item.price}</p>
+                <button className="card-btn">
+            
+                Ver Más
+                
+                </button>
 
 
         </div>

@@ -10,50 +10,59 @@ import image4 from '../images/image4.jpg'
 
 
 
-function ItemListContainer (){
+function ItemListContainer ({}){
 
   const onAdd = () => {
     console.log("agregado")
   }
 
+  const PRODUCTS = [
+    {id: 1, title: 'Guitarra Fender Stratocaster', photo: image1, price:'$2500', categoryId: 'instrumentos'},
+    {id: 2, title: 'Guitarra Gibson Les Paul', photo: image2, price:'$2900', categoryId: 'instrumentos'},
+    {id: 3, title: 'Afinador de Guitarra', photo: image3, price:'$150', categoryId: 'accesorios'},
+    {id: 4, title: 'Correa de Guitarra', photo: image4, price:'$300', categoryId: 'accesorios'},
+  ]
+
   const [list,setList] = useState([])
+  const { id } = useParams()
+  
 
 
   useEffect(()=>{
     getProducts.then((res)=>setList(res))
- }, [])
+    getProducts.catch(err => console.log("algo salio mal"))
+    //  //si hay un id de la categoría
+    //  if(id) {
+    //   const filteredItems = list.filter(product => product.categoryId == id);
+    //   console.log(id);
+    //   setList(filteredItems);
+    //   }else{
+    //     setList(list)
+    //   }
+}, [])
 
-const PRODUCTS = [
-  {id: 1, title: 'Guitarra Fender Stratocaster', photo: image1, price:'$2500', category: 'instrumentos'},
-  {id: 2, title: 'Guitarra Gibson Les Paul', photo: image2, price:'$2900', category: 'instrumentos'},
-  {id: 3, title: 'Afinador de Guitarra', photo: image3, price:'$150', category: 'accesorios'},
-  {id: 4, title: 'Correa de Guitarra', photo: image4, price:'$300', category: 'accesorios'},
-]
+
 const getProducts = new Promise((res, rej) => {
    setTimeout(()=>{
        res(PRODUCTS)
    }, 2000)
 })
-
-    const [ items, setItems ] = useState([])
-    const { id } = useParams()
-
-    useEffect(() => {
-      if (id){
-        const category = PRODUCTS.filter(product =>product.categoryId == id)
-        setItems(category)
-      }else{
-        setItems(PRODUCTS)
-      }
-    }, [id, PRODUCTS])
   
+useEffect(()=>{
+  getProducts.then((res)=>setList(res))
+  getProducts.catch(err => console.log("algo salio mal"))
+  const filteredItems = list.filter(p => p.categoryId == id);
+     setList(filteredItems);
+  }, [id])
+
     return(
     
     <div>
     <h1>Listado de Productos</h1>
     
     <div className="itemContainer-grid">
-    <ItemList  list={list}></ItemList>
+       {/* {list.lenght > 1 ? <ItemList list={list}/> : <h2>Loading...</h2>} */}
+      <ItemList  list={list}></ItemList>  
     </div>
     <Contador onAdd={onAdd}/>
     

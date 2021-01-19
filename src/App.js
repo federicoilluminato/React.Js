@@ -31,15 +31,10 @@ function App(){
             </Route>
 
 
-            <Route  path="/categories/instrumentos">
-                <Instrumentos/>
+            <Route  path="/categories/:id">
+                <ItemListContainer></ItemListContainer>
             </Route>
 
-
-            <Route  path="/categories/accesorios">
-                <Accesorios/>
-            </Route>
-            
             
             </Switch>
             

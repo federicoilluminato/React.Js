@@ -52,6 +52,7 @@ body {
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
+    padding-top: 0.9rem;
 }
 
 .navbar-links-li:hover{
@@ -60,7 +61,7 @@ body {
 }
     
 
-.navbar-links-li a{
+.navbar-links-li {
     text-decoration: none;
     color: white;
 }
@@ -153,7 +154,7 @@ body {
 
 .itemContainer:hover{
     transform: translateY(-0.5%);
-    box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.5);
 }
 
 .card-img{
@@ -188,4 +189,9 @@ body {
     column-gap: 5%;
     justify-content: center;
     
+}
+
+.card-title{
+    display: flex;
+    justify-content: center;
 }

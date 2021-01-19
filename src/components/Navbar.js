@@ -4,22 +4,38 @@ import {Link,NavLink} from 'react-router-dom';
 
 
 function Navbar (){
+  
+  const categories = [
+    {
+      categoryId:"instrumentos",
+      name:"Instrumentos",
+    },
+    {
+      categoryId:"accesorios",
+      name:"Accesorios",
+    }
+
+  ]
+  
+  
   return(
  
+
 
       <nav className="navbar">
 
 
           <ul className="navbar-links">
-            <li className="navbar-links-li">
-          <NavLink to="/categories/instrumentos">Instrumentos</NavLink>
+
+            <li>
+            
+            {categories.map (category => 
+          <NavLink to={`/categories/${category.categoryId}`} className="navbar-links-li" >{category.name}</NavLink>)}
+           
             </li>
-            <li className="navbar-links-li">
-          <NavLink to="/categories/accesorios">Accesorios</NavLink>
-          </li>
           </ul>
 
-          <NavLink className="navbar-logo" to="/">Instrumentos React</NavLink>
+          <NavLink className="navbar-logo" to="/">React Music</NavLink>
 
           <i class="fas fa-shopping-cart">
           <CartWidget></CartWidget>
