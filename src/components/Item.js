@@ -1,4 +1,5 @@
 import React , {useEffect,useState} from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Item ({item}){
 
@@ -15,7 +16,7 @@ function Item ({item}){
                 <p className="card-price">{item.price}</p>
                 <button className="card-btn">
             
-                Ver Más
+                <NavLink to={`/item/${item.id}`}>Ver Más</NavLink>
                 
                 </button>
 

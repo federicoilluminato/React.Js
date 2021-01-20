@@ -1,17 +1,24 @@
 import React , {useState} from 'react';
 
-const Contador = ({onAdd}) => {
+const Contador = ({stock, initial, onAdd, condicion}) => {
     
-    const [contador,setContador] = useState(0)
+    const [contador,setContador] = useState(initial)
 
     const aumentarContador = () => {
-        setContador(contador + 1)
+        if(contador < stock){
+            setContador(contador+1)
+        }
     }
     const restarContador = () => {
-        setContador(contador - 1)
+        if(contador > 1){
+            setContador(contador-1)
+        }
     } 
     const resetearContador = () => {
             setContador(0)
+    }
+    const agregarCarrito = () => {
+            onAdd(contador)
     }
 
     
@@ -19,7 +26,7 @@ const Contador = ({onAdd}) => {
     
     return (
         <div className="contador-container">
-            <p>Nombre del producto</p>
+            
                 <div className="itemcount">
             <button disabled={contador >= 10}onClick={ aumentarContador }>+</button>
                                 <p>{contador}</p>
@@ -28,7 +35,8 @@ const Contador = ({onAdd}) => {
             <br></br>
             <button className="btn-contador"onClick={ resetearContador }>Reset</button>
             <br></br>
-            <button className="btn-contador" onClick={onAdd}>Agregar al carrito</button>
+            
+            {condicion ? <button className="btn-contador" onClick={agregarCarrito}>Agregar al carrito</button> : null}
         </div>
     )
 }

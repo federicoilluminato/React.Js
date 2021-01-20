@@ -150,6 +150,7 @@ body {
     cursor: pointer;
     transition: 0.2s;
     width: 100%;
+    margin: 3rem;
 }
 
 .itemContainer:hover{
@@ -189,6 +190,26 @@ body {
     column-gap: 5%;
     justify-content: center;
     
+}
+
+.container-description{
+    display: flex;
+    justify-content: center;
+}
+
+.itemContainer-description{
+    background-color: #fff;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.2s;
+    width: 50%;
+    margin: 3rem;
+}
+.itemContainer-description:hover{
+    transform: translateY(-0.5%);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.5);
 }
 
 .card-title{

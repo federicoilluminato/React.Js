@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 import './components/estilos/estilos.css';
 import Navbar from './components/Navbar';
 import ItemListContainer from "./components/ItemListContainer";
@@ -9,9 +9,9 @@ import Accesorios from './components/Accesorios';
 import Home from './components/Home'
 
 
-function App(){
+const App = () => {
 
-
+    
 
     return(
         <BrowserRouter className="App">

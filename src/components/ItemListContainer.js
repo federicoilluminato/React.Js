@@ -26,9 +26,11 @@ function ItemListContainer ({}){
 
 
   useEffect(()=>{
-    getProducts.then((res)=>setList(res))
-    getProducts.catch(err => console.log("algo salio mal"))
-}, [])
+
+    const filteredItems = list.filter(p => p.categoryId == id);
+    setList(filteredItems);
+
+}, [id])
 
 
 const getProducts = new Promise((res, rej) => {
@@ -36,13 +38,9 @@ const getProducts = new Promise((res, rej) => {
        res(PRODUCTS)
    }, 2000)
 })
+getProducts.then((res)=>setList(res))
+getProducts.catch(err => console.log("algo salio mal"));
   
-useEffect(()=>{
-  // getProducts.then((res)=>setList(res))
-  // getProducts.catch(err => console.log("algo salio mal"))
-  const filteredItems = list.filter(p => p.categoryId == id);
-     setList(filteredItems);
-  }, [id])
 
     return(
     
