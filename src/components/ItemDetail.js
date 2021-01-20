@@ -5,12 +5,14 @@ import {Link,NavLink} from 'react-router-dom';
 const ItemDetail = ({item,}) => {
 
     const[condicionBoton,setCondicionBoton] = useState(true)
-
+    const[show,setShow] = useState(false)
     const onAdd = () => {
+        
         console.log("agregado")
-
         setCondicionBoton(false)
+        setShow(true)
       }
+
 
 
 
@@ -29,22 +31,15 @@ const ItemDetail = ({item,}) => {
              
 
             
-            <Contador onAdd={onAdd}/>
+            <Contador onAdd={onAdd} condicion={condicionBoton}/>
 
             {
             <Link to="/cart">
-                    <button type="submit">Comprar</button>
+                {show && <button type="submit">Terminar Compra</button>}
+                    
             </Link> 
             }
-
-
-                
-             
-            
-                
-    
-
-        </div>
+            </div>
         </div>
 
     )
