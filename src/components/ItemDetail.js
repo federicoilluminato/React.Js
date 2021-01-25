@@ -1,14 +1,22 @@
-import React, {useEffect,useState} from 'react'
+import React, {useEffect,useState,useContext} from 'react'
 import Contador from './Contador'
 import {Link,NavLink} from 'react-router-dom';
+import {CartContext} from './CartContext';
+
 
 const ItemDetail = ({item,}) => {
 
     const[condicionBoton,setCondicionBoton] = useState(true)
     const[show,setShow] = useState(false)
+
+    const [cart,setCart] = useContext(CartContext);
+    
     const onAdd = () => {
         
         console.log("agregado")
+        const item = {name: item.title, price:item.price};
+        setCart(curr => [...curr, item]);
+
         setCondicionBoton(false)
         setShow(true)
       }
@@ -35,7 +43,7 @@ const ItemDetail = ({item,}) => {
 
             {
             <Link to="/cart">
-                {show && <button type="submit">Terminar Compra</button>}
+                {show && <button type="submit" className="btn-contador"><p>Terminar Compra</p></button>}
                     
             </Link> 
             }

@@ -16,6 +16,10 @@ function Navbar (){
     }
 
   ]
+
+  const toggle = () => {
+    console.log('mostrar/ocultar')
+  }
   
   
   return(
@@ -37,9 +41,10 @@ function Navbar (){
 
           <NavLink className="navbar-logo" to="/">React Music</NavLink>
 
-          <i class="fas fa-shopping-cart">
+          <i class="fas fa-shopping-cart" onClick={toggle}>
           <CartWidget></CartWidget>
           </i>
+
           
 
       </nav>

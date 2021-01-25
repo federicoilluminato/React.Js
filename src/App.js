@@ -6,7 +6,9 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Instrumentos from './components/Instrumentos';
 import Accesorios from './components/Accesorios';
-import Home from './components/Home'
+import Home from './components/Home';
+import {CartProvider} from './components/CartContext';
+import Cart from './components/Cart';
 
 
 const App = () => {
@@ -14,8 +16,10 @@ const App = () => {
     
 
     return(
+        <CartProvider>
         <BrowserRouter className="App">
-            <Navbar />
+            <Navbar />  
+            <Cart></Cart>
            
             <Switch>
             
@@ -35,11 +39,16 @@ const App = () => {
                 <ItemListContainer></ItemListContainer>
             </Route>
 
+          
             
             </Switch>
             
           
         </BrowserRouter>
+        </CartProvider>
+
+
+
     )
 
 }

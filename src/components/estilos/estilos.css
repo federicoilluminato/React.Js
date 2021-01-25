@@ -216,3 +216,16 @@ body {
     display: flex;
     justify-content: center;
 }
+
+.cart-display{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cart-display-tab{
+    position: absolute;
+    overflow: hidden;
+    opacity: 90%;
+    background-color: grey;
+    padding: 30px;
+}
