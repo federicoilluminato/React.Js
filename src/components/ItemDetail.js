@@ -9,13 +9,13 @@ const ItemDetail = ({item,}) => {
     const[condicionBoton,setCondicionBoton] = useState(true)
     const[show,setShow] = useState(false)
 
-    const [cart,setCart] = useContext(CartContext);
+    const [cart,addItem,deleteItem] = useContext(CartContext);
     
     const onAdd = () => {
         
         console.log("agregado")
         const item = {name: item.title, price:item.price};
-        setCart(curr => [...curr, item]);
+        addItem(curr => [...curr, item]);
 
         setCondicionBoton(false)
         setShow(true)
@@ -39,7 +39,7 @@ const ItemDetail = ({item,}) => {
              
 
             
-            <Contador onAdd={onAdd} condicion={condicionBoton}/>
+            <Contador onAdd={onAdd} condicion={condicionBoton} item={item}/>
 
             {
             <Link to="/cart">

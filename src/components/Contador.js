@@ -1,8 +1,10 @@
-import React , {useState} from 'react';
+import React , {useContext, useState} from 'react';
+import { CartContext } from './CartContext';
 
-const Contador = ({stock, onAdd, condicion}) => {
+const Contador = ({stock, onAdd, condicion,}) => {
     
     const [contador,setContador] = useState(0)
+    
 
     const aumentarContador = () => {
         if(contador < 10){
@@ -20,6 +22,7 @@ const Contador = ({stock, onAdd, condicion}) => {
     }
     const agregarCarrito = () => {
             onAdd(contador)
+            console.log('test')
     }
     
        

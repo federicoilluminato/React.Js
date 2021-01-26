@@ -4,11 +4,11 @@ export const CartContext = React.createContext ();
 
 export const CartProvider = (props) => {
 
-    const [cart, setCart] = useState([]);
+    const [cart, addItem, deleteItem] = useState([]);
 
     return (
 
-        <CartContext.Provider value={[cart, setCart]}>
+        <CartContext.Provider value={[cart, addItem, deleteItem]}>
             
         {props.children}
 
