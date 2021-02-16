@@ -1,56 +1,35 @@
-import React, { Component } from 'react';
+import React, {useContext , useEffect, useState } from 'react';
 import CartWidget from './CartWidget';
-import {Link,NavLink} from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import CartContext from '../CartContext';
 
+const Navbar = () => {
 
-function Navbar (){
-  
-  const categories = [
-    {
-      categoryId:"instrumentos",
-      name:"Instrumentos",
-    },
-    {
-      categoryId:"accesorios",
-      name:"Accesorios",
-    }
+    const { cart } = useContext(CartContext);
+    const [cartCantidad, setCartCantidad] = useState(0);
+    
+    console.log(cart.length)
+    
+    useEffect(() => {
+        if(cart.length > 0){
+        setCartCantidad(cart.length)
+    }})
+    
 
-  ]
+    return (
+    <header>
+    <nav className="navbar">
+            <NavLink to="/"className="logo">Tienda React</NavLink>
+        <ul className="navbar-ul">
+            {/* <li><NavLink  to="/productos">Productos</NavLink></li> */}
+            <li><NavLink  to="/category/accesorios">Accesorios</NavLink></li>
+            <li><NavLink  to="/category/instrumentos">Instrumentos</NavLink></li>
+         </ul>
+            <Link to="/cart"><i className="cartwidget"><CartWidget /><p className="cart-quantity">{cart.length}</p></i></Link>
+    </nav>
+    </header> 
 
-  const toggle = () => {
-    console.log('mostrar/ocultar')
-  }
-  
-  
-  return(
- 
-
-
-      <nav className="navbar">
-
-
-          <ul className="navbar-links">
-
-            <li>
-            
-            {categories.map (category => 
-          <NavLink to={`/categories/${category.categoryId}`} className="navbar-links-li" >{category.name}</NavLink>)}
-           
-            </li>
-          </ul>
-
-          <NavLink className="navbar-logo" to="/">React Music</NavLink>
-
-          <i class="fas fa-shopping-cart" onClick={toggle}>
-          <CartWidget></CartWidget>
-          </i>
-
-          
-
-      </nav>
-
-  )
+     );
 }
-
-
+ 
 export default Navbar;

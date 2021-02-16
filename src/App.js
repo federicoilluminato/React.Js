@@ -1,54 +1,79 @@
-import React, {useState,useEffect} from "react";
-import './components/estilos/estilos.css';
+import React, { Fragment, useState,  } from 'react';
+import ItemListContainer from './components/ItemListContainer';
 import Navbar from './components/Navbar';
-import ItemListContainer from "./components/ItemListContainer";
-import ItemDetailContainer from "./components/ItemDetailContainer";
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import Instrumentos from './components/Instrumentos';
-import Accesorios from './components/Accesorios';
-import Home from './components/Home';
-import {CartProvider} from './components/CartContext';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import ItemDetailContainer from './components/ItemDetailContainer';
+import CartContext, { Provider } from './CartContext';
 import Cart from './components/Cart';
 
 
-const App = () => {
 
-    
+
+
+
+const App = () => {
+    const cart = []
+    const data = { cart };
+    // const [carrito, setCarrito] = useState(cart);
+
+    // const addItem = (product) => {
+    //     // cart.push(...product)
+    // }
+    // const removeItem = (product, id) => {
+    //     // const id = item.id
+    //     // cart.filter(item.id !== id)
+    // }
+
+
+
+    console.log(cart);
 
     return(
-        <CartProvider>
-        <BrowserRouter className="App">
-            <Navbar />  
-            <Cart></Cart>
-           
+        <Fragment>
+            <CartContext.Provider value={data}>
+            <BrowserRouter>
+
+
+            <Navbar />
             <Switch>
-            
-            
-            <Route path="/" exact>
-                <Home/>
-                <ItemListContainer></ItemListContainer>
-                
+
+            <Route exact path="/">
+            <ItemListContainer
+            greeting='Listado de Productos'
+            />
             </Route>
 
-            <Route path="/item/:id" exact>
-                <ItemDetailContainer></ItemDetailContainer>
+            <Route exact path="/category/accesorios">
+            <ItemListContainer
+            greeting='Listado de Productos'
+            />
+            </Route>
+
+            <Route exact path="/category/instrumentos">
+            <ItemListContainer
+            greeting='Listado de Productos'
+            />
+            </Route>
+
+            <Route exact path="/item/:id">
+            <ItemDetailContainer
+            greeting='Listado de Productos'
+            />
+            </Route>
+
+            <Route exact path="/cart">
+            <Cart
+
+            />
             </Route>
 
 
-            <Route  path="/categories/:id">
-                <ItemListContainer></ItemListContainer>
-            </Route>
 
-          
-            
+
             </Switch>
-            
-          
-        </BrowserRouter>
-        </CartProvider>
-
-
-
+            </BrowserRouter>
+            </CartContext.Provider>
+        </Fragment>
     )
 
 }

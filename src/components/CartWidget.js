@@ -1,11 +1,11 @@
-import React, {Components} from 'react';
+import React from 'react';
+import { FiShoppingCart } from 'react-icons/fi'
 
-function CartWidget(){
-    return(
-        <div className="navbar-cart-items">0</div>
-    )
+
+const CartWidget = () => {
+    return ( 
+        <i><FiShoppingCart></FiShoppingCart></i>
+     );
 }
-
-
-
+ 
 export default CartWidget;

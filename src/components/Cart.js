@@ -1,31 +1,34 @@
-import React, {useContext} from 'react';
-import {CartContext} from './CartContext';
+import React, { useContext }from 'react';
+import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import CartContext from '../CartContext';
+import CartItem from './CartItem';
 
 const Cart = () => {
 
-    const [cart,addItem,deleteItem] = useContext(CartContext);
-    const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0 );
+    const { cart } = useContext(CartContext);
+    console.log(cart.length);
+
     
+
+
     return (
+        <Container fluid className="cart-container">
+            
+            {cart.length > 0 ?
+            cart.map(item => <CartItem key={Math.random()}
+            item={item}
+            >
+               
 
-            <div className='cart-display'>
-
-                    <div className='cart-display-tab'>  
-                  
-
-                    <p>items in cart : {cart.length}</p>
-                    
-                    <p>total : {totalPrice}</p>
-                    
-                    
-                    </div>
+            </CartItem>) : 
+            <div>
+                <h1>No hay items, <Link to="/">volver</Link> </h1>
             </div>
+            }
 
+        </Container>
     )
-    
-
-
-
 }
 
-export default Cart;
+export default Cart

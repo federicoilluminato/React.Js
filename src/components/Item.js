@@ -1,29 +1,35 @@
-import React , {useEffect,useState} from 'react';
-import { NavLink } from 'react-router-dom';
-
-function Item ({item}){
-
-    
-
-   
+import React from 'react';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 
-    return(
-        <div className="itemContainer">
-                
-                <img src={item.photo} className="card-img"></img>
-                <h2 className="card-title">{item.title}</h2>
-                <p className="card-price">{item.price}</p>
-                <button className="card-btn">
+
+const Item = ({item}) => {
+    return ( 
+        <div>
+
+            {/* <h2>{item.title}</h2>
+            <p>{item.price}</p>
+            <img src={item.photo} alt=""/>
+            <button className="btn-primary">
+                Ver Más
+            </button>
+            <ItemCount /> */}
+
+            <Card style={{ width: '18rem' }} className="item-card">
+            <Card.Img variant="top" className="img-card img-fluid" src={item.photo} />
+            <Card.Body>
+            <Card.Title className="item-card-title">{item.title}</Card.Title>
+            <Card.Title>{item.price}</Card.Title>
+            <Link to={`/item/${item.id}`}><Button variant="primary">Ver más</Button></Link>
+            </Card.Body>
+            </Card>
+
             
-                <NavLink to={`/item/${item.id}`}>Ver Más</NavLink>
-                
-                </button>
-
-
         </div>
-    )
+
+     );
 }
-
-
+ 
 export default Item;
