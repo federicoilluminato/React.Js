@@ -14,6 +14,7 @@ import Cart from './components/Cart';
 const App = () => {
     const cart = []
     const data = { cart };
+    
     // const [carrito, setCarrito] = useState(cart);
 
     // const addItem = (product) => {

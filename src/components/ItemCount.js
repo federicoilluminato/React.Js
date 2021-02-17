@@ -24,7 +24,7 @@ const ItemCount = ({ item }) => {
     const [contador, setContador] = useState(0);
     const [condition, setCondition] = useState(false);
     const sumarContador = () => {
-        if(contador < 10){
+        if(contador < item.stock){
         setContador(contador+1)
         }
     }
@@ -50,7 +50,7 @@ const ItemCount = ({ item }) => {
                 <div className="agregar-carrito">
                     {condition ? <Link to="/cart"><button className="btn-primary">Terminar Compra</button></Link>
                 :
-                <button onClick={ addItem } className="btn-primary">Agregar al carrito</button>
+                <button onClick={ addItem   } className="btn-primary">Agregar al carrito</button>
                 } 
             
                 </div>

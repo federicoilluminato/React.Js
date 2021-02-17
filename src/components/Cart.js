@@ -7,7 +7,8 @@ import CartItem from './CartItem';
 const Cart = () => {
 
     const { cart } = useContext(CartContext);
-    console.log(cart.length);
+    
+    console.log(cart);
 
     
 
