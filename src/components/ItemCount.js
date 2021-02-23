@@ -6,8 +6,10 @@ const ItemCount = ({ item }) => {
     // console.log(item)
     
     const { cart } = useContext(CartContext);
+    
     // console.log(cart)
     const [carrito, setCarrito] = useState(cart);
+    const [total,setTotal] = useState(0);
 
     const addItem = () => {
         // console.log(`added ${contador} ${item.title}`);
@@ -15,10 +17,11 @@ const ItemCount = ({ item }) => {
         setCondition(true);
         console.log(cart)
         if(contador >= 1){
-            item.quantity = `${contador}`;
+            item.quantity = parseInt(`${contador}`);
             item.cartId = Math.random();
             console.log(cart);
         }
+        setTotal(total+item.price * item.quantity)
     } 
 
     const [contador, setContador] = useState(0);

@@ -21,8 +21,8 @@ const ItemDetail = ({ item }) => {
         // </div>
             <div>
             {item.id ? 
-                <div>
-                <img src={item.photo} alt=""/>
+                <div className="detail">
+                <img className="detail-photo" src={item.photo} alt=""/>
                 <h1>{item.title}</h1>
                 <h1>${item.price}</h1>
                 <h4>Stock: {item.stock}</h4>

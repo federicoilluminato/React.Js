@@ -20,17 +20,21 @@
 }
 
 body {
-    color: var(--negro);
+    color: var(--blanco);
     background-color: var(--blanco);
     /* font-family: 'Montserrat', sans-serif; */
     font-size: 16.18px;
+    background: #c31432;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+
 }
 
 .navbar{
-    color: #222;
+    color: #fff;
     /* background-color: #222; */
     /* width: 100%; */
-    border: 3px solid black;
     text-align: center;
 }
 .navbar-ul{
@@ -42,36 +46,51 @@ body {
 }
 .logo{
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 3.3rem;
     position: absolute;
     width: 99%;
     /* justify-content: center; */
     /* margin-left: 43%; */
+    text-decoration: none;
+    color: #fff;
+    margin-top: 1rem;
+}
+.logo:hover{
+    color: #fff;
+    text-decoration: none;
 }
 .cartwidget{
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 2rem;
     position: relative;
     z-index: 1;  
+    color:#fff;
+    margin: 1rem
 }
 .navbar-ul a {
     text-decoration: none;
-    padding: 0.5rem;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    color: #fff;
 }
 
 .itemlist-container{
-    margin: 2rem;
+    margin-top: 6rem;
+    width: 100%;
 }
 .itemlist-container-title{
+    display: inline;
     text-align: center;
 }
 
 .itemlist-container-row{
     justify-content: center;
+    margin-top: 2rem;
 }
 
 .item-card{
     margin: 1rem;
+    color: #222;
 }
 
 .item-card img{
@@ -117,12 +136,13 @@ body {
 .cart-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     
 }
 .cart-item{
+    width: 50%;
     display: flex;
     align-items: center;
+    justify-content: space-around;
     border: solid 2px grey;
 }
 .cart-item img{
@@ -133,5 +153,33 @@ body {
     bottom: -0.6rem;
     right: -0.9rem;
     border-radius: 0.5rem;
-    color: red;
+    color: black;
+}
+
+.greeting{
+    color: #fff;
+}
+
+.spinner {
+    width: 100px;
+    height: 100px;
+    font-size: 2rem;
+}
+.numero-orden{
+    font-size: 2rem;
+    background-color: #fff;
+    color: #222;
+    text-align: center;
+    border-radius: 21px;
+}
+.detail{
+    width: 60rem;
+    margin: 3rem;
+    padding: 1rem;
+}
+
+.detail-photo{
+    width: 18rem;
+    height: 18rem;
+    object-fit: scale-down;
 }

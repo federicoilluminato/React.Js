@@ -65,12 +65,12 @@ const ItemListContainer = ({greeting}) => {
     return ( 
         <Container fluid className="itemlist-container">
             
-            <Row className="itemlist-container-title"><h1>{greeting}</h1></Row>
+            <Row className="itemlist-container-title greeting"><h1>{greeting}</h1></Row>
             <Row className="itemlist-container-row">
             {list.length > 1 ? 
             <ItemList 
             list={list}/> : 
-            <Spinner animation="border" role="status">
+            <Spinner className="spinner" animation="border" role="status">
             <span className="sr-only">Loading...</span>
             </Spinner>}
             

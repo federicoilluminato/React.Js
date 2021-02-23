@@ -20,6 +20,7 @@ const Item = ({item}) => {
             <Card style={{ width: '18rem' }} className="item-card">
             <Card.Img variant="top" className="img-card img-fluid" src={item.photo} />
             <Card.Body>
+                <hr></hr>
             <Card.Title className="item-card-title">{item.title}</Card.Title>
             <Card.Title>${item.price}</Card.Title>
             <Link to={`/item/${item.id}`}><Button variant="primary">Ver más</Button></Link>

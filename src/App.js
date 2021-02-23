@@ -5,7 +5,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import CartContext, { Provider } from './CartContext';
 import Cart from './components/Cart';
-
+import Container from 'react-bootstrap/Container';
 
 
 
@@ -30,7 +30,7 @@ const App = () => {
     console.log(cart);
 
     return(
-        <Fragment>
+        <Container fluid>
             <CartContext.Provider value={data}>
             <BrowserRouter>
 
@@ -74,7 +74,7 @@ const App = () => {
             </Switch>
             </BrowserRouter>
             </CartContext.Provider>
-        </Fragment>
+        </Container>
     )
 
 }
