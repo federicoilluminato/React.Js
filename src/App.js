@@ -14,6 +14,8 @@ import Container from 'react-bootstrap/Container';
 const App = () => {
     const cart = []
     const data = { cart };
+
+    
     
     // const [carrito, setCarrito] = useState(cart);
 
@@ -44,13 +46,13 @@ const App = () => {
             />
             </Route>
 
-            <Route exact path="/category/accesorios">
+            <Route exact path="/category/:categoryId">
             <ItemListContainer
             greeting='Listado de Productos'
             />
             </Route>
 
-            <Route exact path="/category/instrumentos">
+            <Route exact path="/category/:categoryId">
             <ItemListContainer
             greeting='Listado de Productos'
             />

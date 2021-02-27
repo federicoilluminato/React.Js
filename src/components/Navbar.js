@@ -6,14 +6,15 @@ import CartContext from '../CartContext';
 const Navbar = () => {
 
     const { cart } = useContext(CartContext);
-    const [cartCantidad, setCartCantidad] = useState(cart.length);
+    const [cartCantidad, setCartCantidad] = useState(0);
     
     
     
     useEffect(() => {
-        if(cartCantidad > 0){
-        setCartCantidad(cartCantidad)
-    }},[])
+        if(cart.length > 0){
+        setCartCantidad(cart.length)
+        console.log(cart.length)
+    }},[cart])
     
     
 

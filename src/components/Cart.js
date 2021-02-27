@@ -9,6 +9,7 @@ import { firestore } from '../firebaseConfig';
 const Cart = () => {
 
     const { cart } = useContext(CartContext);
+    
 
     //estados de form
     const [nombre,setNombre] = useState("");
